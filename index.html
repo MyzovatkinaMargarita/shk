@@ -464,139 +464,123 @@
 
 
 
-        /* Мобильные устройства (до 768px) */
+       /* ========== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ ========== */
+
+        /* Планшеты и большие смартфоны (до 768px) */
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem; /* Было 1.8 */
             }
             
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.35rem; /* Было 1.5 */
             }
             
-            section {
-                padding: 20px 15px;
-                margin: 5px 10px;
+            section, .section {
+                padding: 15px; /* Уменьшили внутренние отступы */
+                margin: 10px auto; /* Уменьшили внешние отступы */
             }
             
             .Glava {
-                padding: 25px 15px;
-                margin: 5px 10px;
-            }
-            
-            .header-div {
-                gap: 10px;
+                padding: 20px 15px;
+                margin: 10px;
             }
             
             .header-div p {
-                padding: 6px 12px;
-                font-size: 0.9rem;
+                padding: 5px 10px;
+                font-size: 0.85rem;
             }
             
             .d-i-v p {
-                min-width: 120px;
-                font-size: 0.9rem;
-                padding: 8px 10px;
-            }
-            
-            .btn {
-                padding: 13px;
-                font-size: 0.95rem;
-            }
-            
-            #box {
-                padding: 10px;
-                margin: 0 5px;
-            }
-            
-            main {
-                padding: 10px 10px;
-            }
-            
-            .footr {
-                flex-direction: column;
-                gap: 5px;
+                min-width: 100px;
+                font-size: 0.85rem;
+                padding: 6px 8px;
             }
         }
         
-        /* Очень маленькие экраны (до 480px) */
+        /* Смартфоны (до 480px) — Максимальная компактность */
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.3rem !important; /* Еще меньше для мобильных */
+                line-height: 1.2;
             }
             
             h2 {
-                font-size: 1.3rem;
+                font-size: 1.15rem !important;
+                margin-bottom: 10px;
             }
             
             p, .It p {
-                font-size: 1rem;
+                font-size: 0.9rem !important; /* Текст стал компактнее */
+                line-height: 1.4;
             }
             
+            section, .section {
+                padding: 12px 10px !important; /* Минимум отступов по краям */
+                margin: 5px !important;
+                border-radius: 12px; /* Чуть меньше радиус для маленьких экранов */
+            }
+
+            .Glava {
+                padding: 15px 10px !important;
+                margin: 5px !important;
+            }
+            
+            /* Навигация: делаем в 2 колонки вместо длинного списка в 1 колонку */
             .header-div {
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 gap: 5px;
+                padding: 5px;
             }
             
             .header-div p {
                 width: 100%;
                 text-align: center;
-                padding: 10px;
+                padding: 6px;
+                font-size: 0.8rem;
+                background: rgba(255,255,255,0.1);
             }
             
+            /* Компании: тоже в 2 колонки, чтобы не листать бесконечно */
             .d-i-v {
-                flex-direction: column;
-                gap: 10px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
             }
             
             .d-i-v p {
                 width: 100%;
                 min-width: auto;
+                font-size: 0.75rem;
+                padding: 5px;
             }
             
             .btn {
-                padding: 12px 10px;
-                font-size: 0.9rem;
+                padding: 10px;
+                font-size: 0.85rem;
             }
             
             #res {
-                font-size: 1.5rem;
-                padding: 10px;
+                font-size: 1.2rem !important;
+                padding: 8px;
             }
             
             .hidden-list {
-                padding: 15px;
-            }
-            
-            .hidden-list li p {
-                font-size: 0.9rem;
+                padding: 10px;
             }
         }
         
-        /* Большие экраны (от 1200px) */
+        /* БОЛЬШИЕ ЭКРАНЫ (оставляем как было) */
         @media (min-width: 1200px) {
-            .container {
-                max-width: 1140px;
-            }
-            
-            section {
-                max-width: 1100px;
-            }
+            .container { max-width: 1140px; }
+            section { max-width: 1100px; }
         }
         
-        /* Планшеты и маленькие ноутбуки (от 769px до 1199px) */
         @media (min-width: 769px) and (max-width: 1199px) {
-            .container {
-                max-width: 900px;
-            }
-            
-            section {
-                max-width: 850px;
-            }
-            
-            .d-i-v p {
-                min-width: 160px;
-            }
+            .container { max-width: 900px; }
+            section { max-width: 850px; }
+        
         }
 
     </style>
