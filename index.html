@@ -499,77 +499,60 @@
         }
         
         /* Смартфоны (до 480px) — Максимальная компактность */
+                /* Очень маленькие экраны (смартфоны) */
         @media (max-width: 480px) {
-            h1 {
-                font-size: 1.3rem !important; /* Еще меньше для мобильных */
-                line-height: 1.2;
-            }
-            
-            h2 {
-                font-size: 1.15rem !important;
-                margin-bottom: 10px;
-            }
-            
-            p, .It p {
-                font-size: 0.9rem !important; /* Текст стал компактнее */
-                line-height: 1.4;
-            }
-            
-            section, .section {
-                padding: 12px 10px !important; /* Минимум отступов по краям */
-                margin: 5px !important;
-                border-radius: 12px; /* Чуть меньше радиус для маленьких экранов */
+            /* 1. Уменьшаем высоту шапки */
+            header {
+                padding: 10px 0 !important; /* Минимальный отступ сверху/снизу */
             }
 
-            .Glava {
-                padding: 15px 10px !important;
-                margin: 5px !important;
-            }
-            
-            /* Навигация: делаем в 2 колонки вместо длинного списка в 1 колонку */
             .header-div {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                gap: 5px;
-                padding: 5px;
+                gap: 6px !important; /* Расстояние между кнопками меню */
+                padding: 0 10px !important;
             }
-            
+
             .header-div p {
-                width: 100%;
+                padding: 8px 5px !important; /* Сами кнопки меню стали ниже */
+                font-size: 0.75rem !important;
+                margin: 0 !important;
+            }
+
+            /* 2. Уменьшаем отступы в белых блоках (те самые красные пометки) */
+            section, .section {
+                padding: 20px 12px !important; /* Первое число - сверху/снизу, второе - СБОКУ (сделали меньше) */
+                margin: 10px 8px !important; /* Внешние отступы блоков от краев экрана */
+                width: auto !important;
+            }
+
+            /* 3. Увеличиваем шрифт основного текста для читаемости */
+            p {
+                font-size: 1.05rem !important; /* Сделали шрифт чуть крупнее */
+                line-height: 1.45 !important; /* Увеличили межстрочный интервал */
                 text-align: center;
-                padding: 6px;
-                font-size: 0.8rem;
-                background: rgba(255,255,255,0.1);
             }
-            
-            /* Компании: тоже в 2 колонки, чтобы не листать бесконечно */
-            .d-i-v {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 8px;
+
+            /* Уменьшаем отступы в блоке "Вспомним, что такое IT" */
+            .It {
+                padding: 15px 10px !important;
+                margin-bottom: 15px !important;
             }
-            
-            .d-i-v p {
-                width: 100%;
-                min-width: auto;
-                font-size: 0.75rem;
-                padding: 5px;
+
+            /* Заголовок внутри секции */
+            h2 {
+                font-size: 1.25rem !important;
+                margin-bottom: 12px !important;
             }
-            
-            .btn {
-                padding: 10px;
-                font-size: 0.85rem;
-            }
-            
-            #res {
-                font-size: 1.2rem !important;
-                padding: 8px;
-            }
-            
-            .hidden-list {
-                padding: 10px;
+
+            /* Главный заголовок на синем фоне */
+            h1 {
+                font-size: 1.4rem !important;
+                margin: 20px 0 !important;
             }
         }
+
+        
         
         /* БОЛЬШИЕ ЭКРАНЫ (оставляем как было) */
         @media (min-width: 1200px) {
